@@ -18,9 +18,10 @@ def status():
     """Renders a sample page."""
     out_dict = {}
     out_dict["hostname"] = run_cmd(["hostname"])
-    out_dict["ip_address"] = os.environ.get('SERVER_HOST', 'localhost')
-    out_dict["cpus"] = os.environ.get('SERVER_HOST', 'localhost')
-    out_dict["memory"] = os.environ.get('SERVER_HOST', 'localhost')
+    # out_dict["ip_address"] = run_cmd(["ip_address"])
+    out_dict["ip_address"] = os.environ.get('SERVER_HOST', 'ip_address')
+    out_dict["cpus"] = os.environ.get('SERVER_HOST', 'cpus')
+    out_dict["memory"] = os.environ.get('SERVER_HOST', 'memory')
     return jsonify(out_dict)
 
 def run_cmd(commands):
